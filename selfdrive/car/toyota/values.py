@@ -51,7 +51,6 @@ class CAR:
   CHR = "TOYOTA C-HR 2018"
   CHR_TSS2 = "TOYOTA C-HR 2021"
   CHRH = "TOYOTA C-HR HYBRID 2018"
-  CHRH_TSSP = "TOYOTA C-HR HYBRID 2020"
   CHRH_TSS2 = "TOYOTA C-HR HYBRID 2022"
   COROLLA = "TOYOTA COROLLA 2017"
   COROLLA_TSS2 = "TOYOTA COROLLA TSS2 2019"
@@ -121,7 +120,6 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
   CAR.CHR: ToyotaCarInfo("Toyota C-HR 2017-20"),
   CAR.CHR_TSS2: ToyotaCarInfo("Toyota C-HR 2021"),
   CAR.CHRH: ToyotaCarInfo("Toyota C-HR Hybrid 2017-19"),
-  CAR.CHRH_TSSP: ToyotaCarInfo("Toyota C-HR Hybrid 2020")
   CAR.CHRH_TSS2: ToyotaCarInfo("Toyota C-HR Hybrid 2022"),
   CAR.COROLLA: ToyotaCarInfo("Toyota Corolla 2017-19"),
   CAR.COROLLA_TSS2: [
@@ -716,26 +714,6 @@ FW_VERSIONS = {
       b'8646FF407000    ',
     ],
   },
-    CAR.CHRH_TSSP: {
-    (Ecu.engine, 0x700, None): [
-     b'\x0189663F438000\x00\x00\x00\x00'
-    ],
-    (Ecu.abs, 0x7b0, None): [
-     b'F152610040\x00\x00\x00\x00\x00\x00'
-    ],
-    (Ecu.dsu, 0x791, None): [
-      b'8821FF407100    ',
-    ],
-    (Ecu.eps, 0x7a1, None): [
-      b'8965B10050\x00\x00\x00\x00\x00\x00'
-    ],
-    (Ecu.fwdRadar, 0x750, 0xf): [
-      b'8821FF407100    ',
-    ],
-    (Ecu.fwdCamera, 0x750, 0x6d): [
-      b'8646FF407100    ',
-    ],
-   },
   CAR.CHRH_TSS2: {
      (Ecu.eps, 0x7a1, None): [
        b'8965B10092\x00\x00\x00\x00\x00\x00',
@@ -2151,7 +2129,7 @@ UNSUPPORTED_DSU_CAR = {CAR.LEXUS_IS, CAR.LEXUS_RC}
 # these cars have a radar which sends ACC messages instead of the camera
 RADAR_ACC_CAR = {CAR.RAV4H_TSS2_2022, CAR.RAV4_TSS2_2022, CAR.CHR_TSS2, CAR.CHRH_TSS2}
 
-EV_HYBRID_CAR = {CAR.AVALONH_2019, CAR.AVALONH_TSS2, CAR.CAMRYH, CAR.CAMRYH_TSS2, CAR.CHRH, CAR.CHRH_TSSP, CAR.CHRH_TSS2, CAR.COROLLAH_TSS2, CAR.HIGHLANDERH, CAR.HIGHLANDERH_TSS2, CAR.PRIUS,
+EV_HYBRID_CAR = {CAR.AVALONH_2019, CAR.AVALONH_TSS2, CAR.CAMRYH, CAR.CAMRYH_TSS2, CAR.CHRH, CAR.CHRH_TSS2, CAR.COROLLAH_TSS2, CAR.HIGHLANDERH, CAR.HIGHLANDERH_TSS2, CAR.PRIUS,
                  CAR.PRIUS_V, CAR.RAV4H, CAR.RAV4H_TSS2, CAR.RAV4H_TSS2_2022, CAR.LEXUS_CTH, CAR.MIRAI, CAR.LEXUS_ESH, CAR.LEXUS_ESH_TSS2, CAR.LEXUS_NXH, CAR.LEXUS_RXH,
                  CAR.LEXUS_RXH_TSS2, CAR.LEXUS_NXH_TSS2, CAR.PRIUS_TSS2, CAR.ALPHARDH_TSS2}
 
